@@ -108,7 +108,7 @@ const handleNewNoteView = (e) => {
 };
 
 const handleRenderSaveBtn = () => {
-  if (!noteTitle.value.trim() || !noteText.value.trim()) {
+  if (!noteTitle.value.trim() || !noteText.value.trim() || noteTitle.getAttribute('readonly')) { // added guard so that the saved button doesn't show up when you are viewing an already saved note
     hide(saveNoteBtn);
   } else {
     show(saveNoteBtn);
